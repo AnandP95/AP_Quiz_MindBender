@@ -45,12 +45,26 @@ var InitialEl = document.getElementById("initial");
 var SaveBtn = document.getElementById("Save_Score");
 var scoreEl = document.getElementById("score");
 
+var highScoreEl = document.getElementById("high-score");
+var highScoreInitialsEl = document.getElementById("high-score-initials");
+
+
 function startQuiz() {
   startBtn.style.display = "none";
   document.getElementById("quiz-container").style.display = "block";
   displayQuestion();
   timer();
+  displayHighScoreAndInitials();
+
+  const highScore = localStorage.getItem("highScore");
+  const initials = localStorage.getItem("initials");
+  if (highScore && initials) {
+    document.getElementById("high-score").textContent = "High Score: " + highScore;
+    document.getElementById("high-score-initials").textContent = "Initials: " + initials;
+  }
 }
+
+
 
 function displayQuestion() {
   if (currentQue < questions.length) {
@@ -73,8 +87,10 @@ function displayAnswer(userAnswer) {
   var Que_list = questions[currentQue];
   if (userAnswer == Que_list.correctAnswer) {
     score = score + 25;
+    document.getElementById("message").textContent ="Correct Answer";
   } else {
     TotalTime = Math.max(TotalTime - 10, 0);
+    document.getElementById("message").textContent ="Wrong Answer";
   }
   if (currentQue === questions.length - 1) {
     quizFinished = true;
@@ -99,10 +115,22 @@ function timer() {
   }, 1000);
 }
 
+
+const highScore = localStorage.getItem("highScore");
+const initials = localStorage.getItem("initials");
+if (highScore && initials) {
+  document.getElementById("high-score").textContent = "High Score: " + highScore;
+  document.getElementById("high-score-initials").textContent = "Initials: " + initials;
+}
 function endQuiz() {
   clearInterval(timerInterval);
   document.getElementById("quiz-container").style.display = "none";
   FinalResult.style.display = "block";
   scoreEl.textContent = score;
   TimeEl.textContent = "Time left: " + TotalTime + " seconds";
+
+
+localStorage.setItem("highScore",score);
+var initials = document.getElementById("initials").value;
+localStorage.setItem("initials",initials);
 }

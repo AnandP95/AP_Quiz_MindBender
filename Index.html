@@ -20,19 +20,28 @@
         <button class="option" onclick="displayAnswer(3)"></button>
       </div>
     </div>
-    <div id="result" class="hide">
+    <div id="result" class="screen">
       <p>Your final score is: <span id="score"></span></p>
       <p id="high-score">High Score: 0</p>
       <p id="high-score-initials">Initials: </p>
+      
       <form onsubmit="saveScore(event)">
         <label for="initials">Enter your initials here, please: </label>
         <input type="text" maxlength="2" id="initials" required>
         <button type="submit">Save Score</button>
       </form>
+
+      
     </div>
-    <button id="start_Btn" onclick="startQuiz()">Start</button>
-    <div id="timer">Time left: <span id="time-left"></span> seconds</div>
+    <button id="start_Btn" onclick="startQuiz()">  Start Quiz Here</button>
+    <div id="timer">Time left: 60 <span id="time-left"></span> seconds</div>
   </div>
+<div>
+  <p id="message"></p>
+</div>
+
+
+
   <script src="Assets/script.js"></script>
 </body>
 
