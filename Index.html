@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  <div class="container">
+  <div class="quiz_box">
     <h1>AP_Quiz_MindBlender Game</h1>
     <div id="quiz-container">
       <p id="Que_list"></p>
@@ -17,15 +17,18 @@
         <button class="option" onclick="displayAnswer(0)"></button>
         <button class="option" onclick="displayAnswer(1)"></button>
         <button class="option" onclick="displayAnswer(2)"></button>
+        <button class="option" onclick="displayAnswer(3)"></button>
       </div>
     </div>
     <div id="result" class="hide">
       <p>Your final score is: <span id="score"></span></p>
+      <p id="high-score">High Score: 0</p>
+      <p id="high-score-initials">Initials: </p>
       <form onsubmit="saveScore(event)">
-        <label for="initials">Enter your initials here,please: </label>
-        <input type="text" maxlength="2" id="initials"  required>
+        <label for="initials">Enter your initials here, please: </label>
+        <input type="text" maxlength="2" id="initials" required>
         <button type="submit">Save Score</button>
-      </form> 
+      </form>
     </div>
     <button id="start_Btn" onclick="startQuiz()">Start</button>
     <div id="timer">Time left: <span id="time-left"></span> seconds</div>
