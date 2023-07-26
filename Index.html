@@ -1,30 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AP_Quiz_MindBender</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>AP_Quiz_MindBlender</title>
+  <link rel="stylesheet" href="Assets/style.css">
 </head>
+
 <body>
-  <div class="quiz_container">
-    <h1>Quiz</h1>
-    <div class="question-container">
-      <p id="question"></p>
-      <ul>
-        <li><button class="Choice" onclick="checkAnswer(0)"></button></li>
-        <li><button class="Choice" onclick="checkAnswer(1)"></button></li>
-        <li><button class="Choice" onclick="checkAnswer(2)"></button></li>
-        <li><button class="Choice" onclick="checkAnswer(3)"></button></li>
-      </ul>
+  <div class="container">
+    <h1>AP_Quiz_MindBlender Game</h1>
+    <div id="quiz-container">
+      <p id="Que_list"></p>
+      <div id="Ans_list">
+        <button class="option" onclick="displayAnswer(0)"></button>
+        <button class="option" onclick="displayAnswer(1)"></button>
+        <button class="option" onclick="displayAnswer(2)"></button>
+      </div>
     </div>
-
-
-</div id="Timer">Time left: <span id="time">60</span> seconds</div>
-
-
-    <div class="result" id="result"></div>
+    <div id="result" class="hide">
+      <p>Your final score is: <span id="score"></span></p>
+      <form onsubmit="saveScore(event)">
+        <label for="initials">Enter your initials here,please: </label>
+        <input type="text" maxlength="2" id="initials"  required>
+        <button type="submit">Save Score</button>
+      </form> 
+    </div>
+    <button id="start_Btn" onclick="startQuiz()">Start</button>
+    <div id="timer">Time left: <span id="time-left"></span> seconds</div>
   </div>
   <script src="Assets/script.js"></script>
 </body>
+
 </html>
