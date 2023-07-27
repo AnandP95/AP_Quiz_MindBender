@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="Assets/style.css">
 </head>
 
+
 <body>
   <div class="quiz_box">
     <h1>AP_Quiz_MindBlender Game</h1>
@@ -20,17 +21,22 @@
         <button class="option" onclick="displayAnswer(3)"></button>
       </div>
     </div>
+
+
+
     <div id="result" class="screen">
       <p>Your final score is: <span id="score"></span></p>
-      <p id="high-score">High Score: 0</p>
-      <p id="high-score-initials">Initials: </p>
       
+      
+
       <form onsubmit="saveScore(event)">
         <label for="initials">Enter your initials here, please: </label>
         <input type="text" maxlength="2" id="initials" required>
         <button type="submit">Save Score</button>
       </form>
-
+      <ul id="score-list">
+        
+      </ul>
       
     </div>
     <button id="start_Btn" onclick="startQuiz()">  Start Quiz Here</button>
