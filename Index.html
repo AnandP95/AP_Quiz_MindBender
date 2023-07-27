@@ -13,8 +13,10 @@
   <div class="quiz_box">
     <h1>AP_Quiz_MindBlender Game</h1>
     <div id="quiz-container">
+      <!-- display a Question list here-->
       <p id="Que_list"></p>
       <div id="Ans_list">
+        <!-- display a answer options here-->
         <button class="option" onclick="displayAnswer(0)"></button>
         <button class="option" onclick="displayAnswer(1)"></button>
         <button class="option" onclick="displayAnswer(2)"></button>
@@ -22,13 +24,13 @@
       </div>
     </div>
 
-
+<!-- display a  final score here-->
 
     <div id="result" class="screen">
       <p>Your final score is: <span id="score"></span></p>
       
       
-
+<!-- display a list of previous score here-->
       <form onsubmit="saveScore(event)">
         <label for="initials">Enter your initials here, please: </label>
         <input type="text" maxlength="2" id="initials" required>
@@ -39,10 +41,12 @@
       </ul>
       
     </div>
+    <!-- set a button to start the quiz here-->
     <button id="start_Btn" onclick="startQuiz()">  Start Quiz Here</button>
     <div id="timer">Time left: 60 <span id="time-left"></span> seconds</div>
   </div>
 <div>
+  
   <p id="message"></p>
 </div>
 

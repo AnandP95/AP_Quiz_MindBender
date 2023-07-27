@@ -1,41 +1,43 @@
+/*  set a background color, margin and padding here*/
+
 body {
   font-family: Arial, sans-serif;
   text-align: center;
   margin: 0;
   padding: 0;
-  background-color:burlywood;
+  background-color:bisque;
 }
 
-
+/*   set a quiz box container width, height, padding and set a border */
 .quiz_box {
   max-width: 900px;
-  height: 600px;
+  height: 550px;
   margin: 50px auto;
   padding: 20px;
   border: 12px solid #e256dd;
   border-radius: 50px;
 }
 
-
+/*  Set main title main, size and color.*/
 h1 {
   margin-bottom: 20px;
   font-size: 50px;
   color:slategray;
 }
 
-
+/*  set a quiz container margin and display as a none.*/
 #quiz-container {
   display: none;
   margin-bottom: 20px;
 }
 
-
+/*  Set a question font size as 30px. */
 #Que_list {
 
   font-size: 30px;
 }
 
-
+/*set a answer list display, flex direction and align items as a center. */
 
 #Ans_list {
   display: flex;
@@ -44,6 +46,7 @@ h1 {
 }
 
 
+/* set answer options margin, padding and border*/
 .option {
   margin: 10px;
   padding: 10px 20px;
@@ -54,12 +57,13 @@ h1 {
 }
 
 
-
+/* set hover effect on answer options */
 .option:hover {
   background-color: #e9538d;
 }
 
 
+/*  display a total score*/
 #result {
   display: none;
   margin-top: 20px;
@@ -67,7 +71,7 @@ h1 {
   color: brown;
 }
 
-
+/* set a timer font size,weight, margin. */
 #timer {
   font-size: 18px;
   font-weight: bold;
@@ -82,7 +86,7 @@ h1 {
 }
 
 
-
+/*  set a start button font size . */
 #start_Btn{
 
   font-size: 25px;

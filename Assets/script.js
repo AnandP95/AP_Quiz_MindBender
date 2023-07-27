@@ -1,12 +1,8 @@
 
-
+/* Array of the quiz questions and options for answer */
 
 var questions = [ 
-
-
-  
-
-  {
+{
       Que_list: "Choose the correct HTML element for the largest heading:",
 
       Ans_list:["<heading>",  "<head>", "<h6>","<h1>"],
@@ -28,13 +24,15 @@ var questions = [
   },
 
   {
-      Que_list: "Choose the correct HTML element for the largest heading:",
+      Que_list: "Which operator is used to assign a value to a variable?",
 
-      Ans_list:["<heading>",  "<head>", "<h6>","<h1>"],
-      correctAnswer:3
+      Ans_list:["*",  "x", "=","-"],
+      correctAnswer:2
   },
 
 ];
+
+/* create a variable for current question, Answer , score and total time */
 
 let currentQue = 0;
 let score = 0;
@@ -42,8 +40,11 @@ let TotalTime = 60;
 let quizFinished = false;
 let timerInterval;
 
+/* create a array for store the all scores */
 var allScores =[];
 
+
+/* Set a dom elements here */
 var startBtn = document.getElementById("start_Btn");
 var QuestionEl = document.getElementById("Que_list");
 var AnswerEl = document.getElementById("Ans_list");
@@ -56,6 +57,8 @@ var scoreList = document.getElementById("score-list");
 var initialsInput = document.getElementById('initials');
 
 
+
+/* Here set function to start a quiz*/
 function startQuiz() {
 startBtn.style.display = "none";
 document.getElementById("quiz-container").style.display = "block";
@@ -64,7 +67,7 @@ timer();
 }
 
 
-
+/* here set a function to save the score */
 function saveScore(event,userScore) {
 event.preventDefault();
 
@@ -89,8 +92,11 @@ initialsInput.value = '';
 
 
 
-
+/* Set a function for display the questions */
 function displayQuestion() {
+
+
+
 if (currentQue < questions.length) {
   var Que_list = questions[currentQue];
   QuestionEl.textContent = Que_list.Que_list;
@@ -101,12 +107,13 @@ if (currentQue < questions.length) {
     OptionBtn[i].textContent = Que_list.Ans_list[i];
   }
 } else {
+  /* Set a variable for end the quiz if all questions is answered.*/
   endQuiz();
 }
 }
 
 
-
+ /* Here is set a function for display answer */
 function displayAnswer(userAnswer) {
 if (quizFinished) {
   return;
@@ -119,7 +126,7 @@ if (userAnswer == Que_list.correctAnswer) {
   TotalTime = Math.max(TotalTime - 10, 0);
   document.getElementById("message").textContent ="Wrong Answer";
 }
-if (currentQue === questions.length - 1) {
+if (currentQue === questions.length) {
   quizFinished = true;
   clearInterval(timerInterval);
   endQuiz();
@@ -130,7 +137,7 @@ if (currentQue === questions.length - 1) {
 }
 
 
-
+/*Set the function to the timer  */
 function timer() {
 TimeEl.textContent = TotalTime;
 timerInterval = setInterval(function () {
@@ -145,6 +152,7 @@ timerInterval = setInterval(function () {
 }
 
 
+/* Here is the Function to end the quiz */
 
 function endQuiz() {
 clearInterval(timerInterval);
@@ -157,7 +165,7 @@ loadScoresFromLocalStorage();
 }
 
 
-
+/*Set function to load scores from local storage */
 function loadScoresFromLocalStorage(){
 
   var storedScores = localStorage.getItem("allScores");
